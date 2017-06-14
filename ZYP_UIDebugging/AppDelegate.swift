@@ -70,6 +70,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          */
         
         
+        // OC环境下
+        
+        /**
+             #if DEBUG
+             
+             #pragma clang diagnostic push
+             #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+             id uiDebugClass = NSClassFromString(@"UIDebuggingInformationOverlay");
+             [uiDebugClass performSelector:NSSelectorFromString(@"prepareDebuggingOverlay")];
+             [[uiDebugClass performSelector:NSSelectorFromString(@"overlay")]performSelector:NSSelectorFromString(@"toggleVisibility")];
+             #pragma clang diagnostic pop
+             
+             #endif
+         
+         ps:sunny的一篇博客实际应用 http://www.jianshu.com/p/fd666c385261
+         
+         */
+        
+        
         return true
     }
 
