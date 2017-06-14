@@ -73,13 +73,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // OC环境下
         
         /**
+         
+         
              #if DEBUG
              
              #pragma clang diagnostic push
              #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-             id uiDebugClass = NSClassFromString(@"UIDebuggingInformationOverlay");
+             
+            // 默认双指轻触statusBar
+            id uiDebugClass = NSClassFromString(@"UIDebuggingInformationOverlay");
              [uiDebugClass performSelector:NSSelectorFromString(@"prepareDebuggingOverlay")];
-             [[uiDebugClass performSelector:NSSelectorFromString(@"overlay")]performSelector:NSSelectorFromString(@"toggleVisibility")];
+             
+            // 开启自动显示
+            [[uiDebugClass performSelector:NSSelectorFromString(@"overlay")]performSelector:NSSelectorFromString(@"toggleVisibility")];
              #pragma clang diagnostic pop
              
              #endif
